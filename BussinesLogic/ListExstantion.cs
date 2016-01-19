@@ -15,4 +15,22 @@ namespace Logic
             return list;
         }
     }
+
+    public static class ListStructReverse<T> where T : struct
+    {
+        public static List<T> MyReverse(List<T> list)
+        {
+            if (list == null)
+                throw new ArgumentNullException("List is empty.");
+            else if (list.Count <= 1)
+                return list;
+            List<T> _list = new List<T>();
+            foreach (var item in list)
+            {
+                _list.Add(item);
+            }
+            _list.Reverse();
+            return _list;
+        }
+    }
 }
